@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  min-height: 100vh;
+}
+body {
+  margin: 0px;
+  background: linear-gradient(30deg ,black ,rgb(189, 11, 11));
+  color: white;
+}
+.carditem a{
+  text-decoration: none;
+  color: wheat;
+}
+
+#main,
+header {
+  height: auto;
+  padding: 20px;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  
+}
+#main h1 {
+  font-size: 80px;
+  text-align: center;
+  text-shadow: 0px 0px 1px transparent;
+}
+#main p,
+a {
+  font-size: 26px;
+}
+#main a {
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 5px 15px;
+  color: white;
+  background-color: blue;
+}
+#main a:hover {
+  animation: change 1s forwards;
+}
+@keyframes change {
+  0% {
+    background: linear-gradient(20deg, red, blue, blue, blue);
+  }
+  25% {
+    background: linear-gradient(30deg, blue, red, blue, blue);
+  }
+  50% {
+    background: linear-gradient(40deg, blue, blue, red, blue);
+  }
+  75% {
+    background: linear-gradient(50deg, blue, blue, blue, red);
+  }
+  100% {
+    background: linear-gradient(60deg, blue, blue, blue, blue);
+  }
+}
+/* //////////////////////////////////////////////    */
+header {
+  background-color: black;
+  color:red;
+}
+header h1 {
+  font-size: 40px;
+  margin: 0px;
+  text-shadow: 2px 5px 5px  white;
+}
+#main2 {
+ position: relative;
+  width: 85%;
+  height: auto;
+  margin: 10px auto;
+}
+#main2 > #cardlist {
+  width: 100%;
+  height: 30rem;
+}
+
+#nav {
+  background-color: black;
+  color: white;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content:space-between;
+  overflow: hidden;
+  border-radius: 0px 20px 0px 0px;
+}
+#nav a {
+  width: 100%;
+  margin: 0px;
+  padding: 5px;
+  text-align: center;
+}
+#nav a:hover {
+  background-color: rgb(219, 20, 20);
+  cursor: pointer;
+}
+#nav a:last-child:hover {
+  border-radius: 0px 20px 0px 0px;
+}
+
+
+
+
+
+.carditem {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  margin-top:5px;
+  border-radius: 0px 0px 5px 20px;
+  box-shadow: 0px 0px 10px 1px;
+  overflow: hidden;
+  display: flex;
+  flex-flow:column wrap;
+  justify-content:space-evenly;
+  align-items: center;
+  opacity: 0;
+}
+.carditem:first-child{
+  opacity: 1;
+}
+
+.carditemchild,table,#Wel{
+  color: aliceblue;
+  text-align: center;
+  font-size: 30px;
+}
+.headul,#Personal{
+  list-style-position:inside;
+  display: flex;
+  flex-flow:row wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  font-size:20px;
+}
+table,thead{
+  box-shadow: 0px 0px 4px 1px grey;
+  border-collapse: collapse;
+  padding: 10px;  
+}
+tbody tr:hover{
+  background-color: black; 
+  color: aliceblue;
+}tbody td{
+  padding: 10px;  
+  border-right: 1px solid rgba(128, 128, 128, 0.171);
+  border-bottom: 1px solid rgba(128, 128, 128, 0.24);
+}
+#t2{ width: 100%;}
+
+#git{
+  background-color: rgba(255, 99, 71, 0.712);
+  border-radius: 10px;
+  position:absolute;
+  font-size: 25px;
+  padding:5px;
+  top:10px;
+  }
+  #git:hover{
+    background-color: rgba(255, 99, 71, 0.911);
+  }
+#git:hover #dropdown
+{
+  display: block;
+}
+
+#dropdown{
+  display: none;
+  list-style:none;
+  border:2px solid salmon;
+  background-color: white;
+  border-radius:10px;
+  padding:5px;
+  position:absolute;
+  top:23px;
+  right:-450px;
+  width:1000px;
+  height:auto;
+}
+
+#dropdown::after{  
+  content: "";
+  position:absolute;
+  border:10px solid;
+  top:-11px;
+  left:50%;
+  border-color: rgba(255, 99, 71, 0.911) transparent transparent;
+  }
+
+#dropdown a{
+  display: block;
+  color: grey;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.315);
+  margin: 0px; 
+  padding-bottom:5px ;
+}#dropdown a:hover{
+  background-color: rgba(255, 0, 0, 0.185);
+}
+
+
+@keyframes vanish {
+  0% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    box-shadow: 0px 0px 0px 0px;
+    background-color: rgb(159, 219, 20);
+  }
+}
+@keyframes shows {
+    0% {
+      width: 0%;
+    }
+   100% {
+        opacity: 1;
+         background-color: rgba(20, 23, 219, 0.568);
+        color: white;
+        width: 100%;
+      }
+  }
+  
