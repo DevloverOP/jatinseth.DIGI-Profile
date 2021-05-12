@@ -1,14 +1,21 @@
 * {
   box-sizing: border-box;
 }
-html {
-  min-height: 100vh;
+
+
+html{
+  border: 5px solid yellow;
+ 
 }
 body {
   margin: 0px;
+  padding: 0px;
   background: linear-gradient(30deg ,black ,rgb(189, 11, 11));
   color: white;
+  border: 5px solid white;
+  min-height:100vh;
 }
+
 .carditem a{
   text-decoration: none;
   color: wheat;
@@ -39,27 +46,12 @@ a {
   padding: 5px 15px;
   color: white;
   background-color: blue;
+  transition: all 1s ease;
 }
 #main a:hover {
-  animation: change 1s forwards;
+  animation: change 1s ;
 }
-@keyframes change {
-  0% {
-    background: linear-gradient(20deg, red, blue, blue, blue);
-  }
-  25% {
-    background: linear-gradient(30deg, blue, red, blue, blue);
-  }
-  50% {
-    background: linear-gradient(40deg, blue, blue, red, blue);
-  }
-  75% {
-    background: linear-gradient(50deg, blue, blue, blue, red);
-  }
-  100% {
-    background: linear-gradient(60deg, blue, blue, blue, blue);
-  }
-}
+
 /* //////////////////////////////////////////////    */
 header {
   background-color: black;
@@ -71,14 +63,16 @@ header h1 {
   text-shadow: 2px 5px 5px  white;
 }
 #main2 {
- position: relative;
   width: 85%;
-  height: auto;
+  height:auto;
   margin: 10px auto;
+
 }
-#main2 > #cardlist {
+
+#cardlist {
+  position:relative;
   width: 100%;
-  height: 30rem;
+  height:500px;
 }
 
 #nav {
@@ -104,25 +98,25 @@ header h1 {
   border-radius: 0px 20px 0px 0px;
 }
 
-
-
-
-
 .carditem {
   position:absolute;
-  width: 100%;
-  height: 100%;
+  width: 0%;
+  height: 0%;
   margin-top:5px;
   border-radius: 0px 0px 5px 20px;
   box-shadow: 0px 0px 10px 1px;
   overflow: hidden;
   display: flex;
-  flex-flow:column wrap;
+  flex-flow:column nowrap;
   justify-content:space-evenly;
   align-items: center;
-  opacity: 0;
+  opacity: 1;
+  
+
 }
 .carditem:first-child{
+  width: 100%;
+  height: 100%;
   opacity: 1;
 }
 
@@ -131,7 +125,7 @@ header h1 {
   text-align: center;
   font-size: 30px;
 }
-.headul,#Personal{
+.headul{
   list-style-position:inside;
   display: flex;
   flex-flow:row wrap;
@@ -152,35 +146,41 @@ tbody tr:hover{
   border-right: 1px solid rgba(128, 128, 128, 0.171);
   border-bottom: 1px solid rgba(128, 128, 128, 0.24);
 }
-#t2{ width: 100%;}
+#t2{
+   width: 100%;}
 
 #git{
   background-color: rgba(255, 99, 71, 0.712);
   border-radius: 10px;
-  position:absolute;
+  position:relative;
   font-size: 25px;
   padding:5px;
-  top:10px;
+  top:-200px;
   }
   #git:hover{
     background-color: rgba(255, 99, 71, 0.911);
   }
 #git:hover #dropdown
 {
-  display: block;
+  display:grid;
+  grid-template-rows:repeat(autofit max-content);
+  grid-template-columns:repeat(2, max-content);
+  gap: 10px;
+  grid-auto-rows:auto;
+
 }
+
 
 #dropdown{
   display: none;
   list-style:none;
-  border:2px solid salmon;
   background-color: white;
-  border-radius:10px;
+  border-radius:5px;
   padding:5px;
   position:absolute;
   top:23px;
-  right:-450px;
-  width:1000px;
+  right:-205px;
+  width:500px;
   height:auto;
 }
 
@@ -194,15 +194,16 @@ tbody tr:hover{
   }
 
 #dropdown a{
-  display: block;
   color: grey;
   border-bottom: 1px solid rgba(128, 128, 128, 0.315);
   margin: 0px; 
+  font-size: 18px;
   padding-bottom:5px ;
+  
+  
 }#dropdown a:hover{
   background-color: rgba(255, 0, 0, 0.185);
 }
-
 
 @keyframes vanish {
   0% {
@@ -217,12 +218,56 @@ tbody tr:hover{
 @keyframes shows {
     0% {
       width: 0%;
+      height: 0%;
     }
    100% {
+        /* display: flex; */
         opacity: 1;
          background-color: rgba(20, 23, 219, 0.568);
         color: white;
         width: 100%;
+        height: 100%;
       }
   }
+  @keyframes change {
+    0% {
+      background: linear-gradient(20deg, red, blue, blue, blue);
+    }
+    25% {
+      background: linear-gradient(30deg, blue, red, blue, blue);
+    }
+    50% {
+      background: linear-gradient(40deg, blue, blue, red, blue);
+    }
+    75% {
+      background: linear-gradient(50deg, blue, blue, blue, red);
+    }
+    100% {
+      background: linear-gradient(60deg, blue, blue, blue, blue);
+    }
+  }
+
   
+  @media (max-width: 800px){
+    #nav{
+  
+      flex-direction:column;
+    }
+    #nav a{
+      border-bottom: 1px solid rgba(255, 255, 255, 0.24);
+      margin-bottom: 2px;
+    }
+    table{
+      font-size: 16px;
+    }
+  
+  }
+  @media (max-width:600px){
+    #dropdown{
+      text-align: center;
+      right:-100px;
+      top:22px; 
+      width:300px;
+    }
+  
+  }

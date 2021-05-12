@@ -22,12 +22,8 @@ class UI {
         (carditem) => {
           
           if (e.target.innerHTML.startsWith(carditem.id)) { 
-                 
-            // e.target.style=`background-color: rgb(219, 20, 20)`;
-             carditem.style = shows;
+                         carditem.style = shows;
           } else {
-          // e.target.parentElement.children[val].style=`background-color:black`;
-              
             carditem.style = `${hide}z-index:${val--}`;
           }
         }
