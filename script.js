@@ -65,6 +65,7 @@ const linkBase = {
   GeoLocation: "https://jatinseth.github.io/jatinseth.GeoLocation/",
   Tracalorie: "https://jatinseth.github.io/jatinseth.Tracalorie/",
   loanCalculator: "https://jatinseth.github.io/jatinseth.loanCalculator/",
+  Grid: "https://jatinseth.github.io/jatinseth.Grid/"
 };
 
 let ui = new UI(linkBase);
